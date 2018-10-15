@@ -5,146 +5,141 @@ import java.util.Scanner;
 public class Runner {
 
 	public static void main(String[] args) {
-		
-		String Observations ="";
-		Swamp compass = new Swamp();
+
+		String Observations = "";
+		Swamp swamp1 = new Swamp();
 		Player player1 = new Player(0, 0);
-		String callFunction;
-		System.out.println("Select which direction you would like to travel: North, East, West or South");
 
-		Scanner command = new Scanner(System.in);
-		callFunction = command.nextLine();
-		
-//		System.out.println(player1.travelNorth());
-//		System.out.println(player1.y);
-		
-// boolean treasure; 
-//	while (treasure = false) {	
-//		
-//		if (callFunction == "North") {
-//		 player1.travelNorth();
-//		}
-//		if (callFunction == "East") {
-//			player1.travelEast();
-//		}
-//		if (callFunction == "South") {
-//			player1.travelSouth();
-//		}
-//		if (callFunction == "West") {
-//			player1.travelWest();
-//		if (Observations == "Treasure found")
-//		{ treasure = true;}
-//		}
-//	}
-		
-		// implementing while loop which is false until player1.x and player1.y coincide with the treasure location 
-		
+		System.out.println(player1.y);
 
-//		System.out.println(player1.y);
-//		System.out.println(player1.checkLocation());
-		
-		
+		while ((player1.x != 5) || (player1.y != 4)) {
 
-		switch (player1.x) {
-		case 5:
+			System.out.println(player1.checkLocation());
 
-			if (player1.y == 4) {
-				Observations = "Treasure found";
+			String callFunction;
+			System.out.println("Select which direction you would like to travel: North, East, West or South");
+			Scanner command = new Scanner(System.in);
+			callFunction = command.nextLine();
+
+			System.out.println(callFunction);
+
+			if (callFunction.equals("North")) {
+				player1.travelNorth();
+			}
+			if (callFunction.equals("East")) {
+				player1.travelEast();
+			}
+			if (callFunction.equals("South")) {
+				player1.travelSouth();
+			}
+			if (callFunction.equals("West")) {
+				player1.travelWest();
 			}
 
-			if (player1.y < 4) {
-				Observations = "Treasure to the north ";
-			} else {
+			switch (player1.x) {
+			case 5:
+
+				if (player1.y == 4) {
+					Observations = "Treasure found";
+				}
+
+				if (player1.y < 4) {
+					Observations = "Treasure to the north ";
+				} else {
+					Observations = "You are lost in the fog";
+				}
+
+				System.out.println(Observations);
+				break;
+
+			case 4:
 				Observations = "You are lost in the fog";
-			}
+				System.out.println(Observations);
 
-			System.out.println(Observations);
-			break;
+				break;
 
-		case 4:
-			Observations = "You are lost in the fog";
-			System.out.println(Observations);
-
-			break;
-
-		case 3:
-			Observations = "You are lost in the fog";
-			System.out.println(Observations);
-
-			break;
-
-		case 2:
-
-			if (player1.y == -4) {
-				Observations = " You have entered a dungeon";
-			}
-
-			if (player1.y <= 0 && player1.y > -4) {
-				Observations = " You can see a dungeon to the south";
-			}
-
-			else {
+			case 3:
 				Observations = "You are lost in the fog";
-			}
+				System.out.println(Observations);
 
-			System.out.println(Observations);
+				break;
 
-			break;
+			case 2:
 
-		case 1:
-			Observations = "You are lost in the fog";
-			System.out.println(Observations);
-			break;
+				if (player1.y == -4) {
+					Observations = " You have entered a dungeon";
+				}
 
-		case 0:
-			Observations = "You are lost in the fog";
-			System.out.println(Observations);
-			break;
+				if (player1.y <= 0 && player1.y > -4) {
+					Observations = " You can see a dungeon to the south";
+				}
 
-		case -1:
-			Observations = "You are lost in the fog";
-			System.out.println(Observations);
-			break;
+				else {
+					Observations = "You are lost in the fog";
+				}
 
-		case -2:
-			if (player1.y == 2) {
-				Observations = " You have entered a forest";
-			}
+				System.out.println(Observations);
 
-			if (player1.y <= 1) {
-				Observations = " You can see a forest to the north";
-			}
-			
-			if (player1.y >= 3) {
-				Observations = " You can see a forest to the south";
-			}			
-			
-			else {
+				break;
+
+			case 1:
 				Observations = "You are lost in the fog";
+				System.out.println(Observations);
+				break;
+
+			case 0:
+				Observations = "You are lost in the fog";
+				System.out.println(Observations);
+				break;
+
+			case -1:
+				Observations = "You are lost in the fog";
+				System.out.println(Observations);
+				break;
+
+			case -2:
+				if (player1.y == 2) {
+					Observations = " You have entered a forest";
+				}
+
+				if (player1.y <= 1) {
+					Observations = " You can see a forest to the north";
+				}
+
+				if (player1.y >= 3) {
+					Observations = " You can see a forest to the south";
+				}
+
+				else {
+					Observations = "You are lost in the fog";
+				}
+
+				System.out.println(Observations);
+				break;
+
+			case -3:
+				Observations = "You are lost in the fog";
+				System.out.println(Observations);
+				break;
+
+			case -4:
+				Observations = "You are lost in the fog";
+				System.out.println(Observations);
+				break;
+
+			case -5:
+				Observations = "You are lost in the fog";
+				System.out.println(Observations);
+				break;
+
+			default:
+				Observations = "You are lost in the fog";
+				System.out.println(Observations);
+				break;
 			}
-			
-			System.out.println(Observations);
-			break;
 
-		case -3:
-			Observations = "You are lost in the fog";
-			System.out.println(Observations);
-			break;
-
-		case -4:
-			Observations = "You are lost in the fog";
-			System.out.println(Observations);
-			break;
-
-		case -5:
-			Observations = "You are lost in the fog";
-			System.out.println(Observations);
-			break;
-
-		default:
-			Observations = "You are lost in the fog";
-			System.out.println(Observations);
-			break;
 		}
+
+		System.out.println("you reached the treasure");
 	}
 }
