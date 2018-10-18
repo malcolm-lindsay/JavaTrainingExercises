@@ -137,9 +137,7 @@ public class Runner {
 				System.out.println(Observations);
 				break;
 			}
-
 		}
-
 		System.out.println("you reached the treasure");
 	}
 }

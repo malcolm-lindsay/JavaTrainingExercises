@@ -1,4 +1,4 @@
-package com.qa.LibaryProject;
+package Tester.com.qa;
 
 /**
  * Hello world!
