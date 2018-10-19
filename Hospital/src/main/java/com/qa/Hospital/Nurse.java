@@ -8,7 +8,7 @@ public class Nurse extends Employees {
 
 	@Override
 	public String toString() {
-		return "Nurse [employeeID=" + employeeID + ", yearsOfExperience=" + yearsOfExperience
-				+ ", position=" + position + ", name=" + name + ", age=" + age + "]";
+		return "Nurse [employeeID=" + getEmployeeID() + ", yearsOfExperience=" + getYearsOfExperience()
+				+ ", position=" + getPosition() + ", name=" + getName() + ", age=" + getAge() + "]";
 	}
 }

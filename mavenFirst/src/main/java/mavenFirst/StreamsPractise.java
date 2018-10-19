@@ -47,8 +47,7 @@ public class StreamsPractise {
 
 		System.out.println(StringLambdasPractise.concatenation.operation("as", "dw"));
 
-
-	}
+}
 
 	LambdasPractise TestMathLambda = (a, b) -> a + b;
 

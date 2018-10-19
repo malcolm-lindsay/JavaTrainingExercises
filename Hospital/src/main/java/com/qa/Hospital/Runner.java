@@ -9,7 +9,7 @@ public class Runner {
 		Nurse nurse1 = new Nurse("Karen",50 , 4, 2, "f");
 				
 		Doctor doctor1 = new Doctor("Kyle", 22, 1, 1, "GP");
-		Doctor doctor2 = new Doctor("Joe", 50, 5, 26,"Junior surgeon" );
+		Doctor doctor2 = new Doctor("Joe", 50, 5, 26,"Junior surgeon");
 		
 		hospital1.addDoctor(doctor1);
 		hospital1.addDoctor(doctor2);
@@ -28,7 +28,13 @@ public class Runner {
 		Team1.addDoctor(doctor2);
 		Team1.addNurse(nurse1);
 		
+//		patientsList.stream().map(p -> p.name()).forEach(System.out::println);
+
 		
+		hospital1.printNamesWithStream();
+		
+		EnumsPractise enums = new EnumsPractise();
+				
 //		System.out.println(Team1);
 // hospital1.getPatientsList();
 //		hospital1.getPatientsList();
@@ -37,8 +43,6 @@ public class Runner {
 //		System.out.println(hospital1.checkLocation("David"));
 // System.out.println(hospital1.checkLocation("Tom"));
 
-		Team1.getTeamsList();
-	
-				
+//		Team1.getTeamsList();
 	}
 }

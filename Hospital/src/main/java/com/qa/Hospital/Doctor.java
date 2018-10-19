@@ -2,7 +2,15 @@ package com.qa.Hospital;
 
 public class Doctor extends Employees {
 
-	String position;
+	private String position;
+
+	public String getPosition() {
+		return position;
+	}
+
+	public void setPosition(String position) {
+		this.position = position;
+	}
 
 	public Doctor(String name, int age, int employeeID, int yearsOfExperience, String position) {
 		super(name, age, employeeID, yearsOfExperience, position);
@@ -11,8 +19,8 @@ public class Doctor extends Employees {
 
 	@Override
 	public String toString() {
-		return "Doctor [position=" + position + ", employeeID=" + employeeID + ", yearsOfExperience="
-				+ yearsOfExperience + ", name=" + name + ", age=" + age + "]";
+		return "Doctor [position=" + position + ", Teams=" + Teams + ", employeeID=" + getEmployeeID()
+				+ ", yearsOfExperience=" + getYearsOfExperience() + ", getName()=" + getName() + ", getAge()=" + getAge()
+				+ "]";
 	}
-
 }

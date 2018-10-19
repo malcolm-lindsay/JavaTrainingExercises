@@ -21,8 +21,8 @@ public class Hospital {
 
 	public void changeDoctorPosition(String name, String newPosition){
 		for (int i =0; i< doctorList.size(); i++) {
-			if (doctorList.get(i).name == name) {
-				doctorList.get(i).position = newPosition; }
+			if (doctorList.get(i).getName() == name) {
+				doctorList.get(i).setPosition(newPosition); }
 			}
 		}
 		
@@ -34,16 +34,26 @@ public class Hospital {
 	public void getPatientsList() {
 		patientsList.stream().forEach(System.out::println);
 	}
+	
+	public void printNames() {
+		patientsList.stream().forEach(System.out::println);
+	}
+
+	
+	public void printNamesWithStream() {
+	patientsList.stream().map(Patients -> Patients.getName()).forEach(System.out::println);
+	}
+	
 
 	public void addPatient(Patients a, String location) {
 		patientsList.add(a);
-		patientsLocation.put(a.name, "surgery");
+		patientsLocation.put(a.getName(), "surgery");
 	}
 	
 	public String removePatient(String name) {
 		patientsLocation.remove(name);
 		for (int i = 0; i < patientsList.size(); i++) {
-			if (name == patientsList.get(i).name) {
+			if (name == patientsList.get(i).getName()) {
 				patientsList.remove(i);
 				return name + "removed from patientList";
 			}
@@ -58,8 +68,8 @@ public class Hospital {
 
 	public String checkTreatment(String a) {
 		for (int i = 0; i < patientsList.size(); i++) {
-			if (patientsList.get(i).name == a) {
-				return patientsList.get(i).treatment;
+			if (patientsList.get(i).getName() == a) {
+				return patientsList.get(i).getTreatment();
 			}
 		}
 		return null;
@@ -69,5 +79,4 @@ public class Hospital {
 	public String toString() {
 		return "Hospital [patientsList=" + patientsList + "]";
 	}
-	
 }

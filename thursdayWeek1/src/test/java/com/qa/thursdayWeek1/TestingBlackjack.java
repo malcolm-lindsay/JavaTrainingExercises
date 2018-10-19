@@ -12,6 +12,6 @@ public class TestingBlackjack {
 		Blackjack blackjack = new Blackjack();
 
 		assertEquals(18, blackjack.closerTo21(18, 8));
-
 	}
+
 }
