@@ -1,26 +1,20 @@
 package com.qa.Hospital;
 
-public class Doctor extends Employees {
+public class Doctor extends Employee {
+	
+	private String specialization;
 
-	private String position;
-
-	public String getPosition() {
-		return position;
+	public Doctor(String name, int age, int salary, String jobTitle, String specialization) {
+		super(name, age, salary, specialization);
+		this.specialization = specialization;
 	}
-
-	public void setPosition(String position) {
-		this.position = position;
+	
+	public String getSpecialization() {
+		return specialization;
 	}
-
-	public Doctor(String name, int age, int employeeID, int yearsOfExperience, String position) {
-		super(name, age, employeeID, yearsOfExperience, position);
-		this.position = position;
-	}
-
-	@Override
-	public String toString() {
-		return "Doctor [position=" + position + ", Teams=" + Teams + ", employeeID=" + getEmployeeID()
-				+ ", yearsOfExperience=" + getYearsOfExperience() + ", getName()=" + getName() + ", getAge()=" + getAge()
-				+ "]";
+	
+	public void promote(int salary, String jobTitle) {
+		this.setSalary(salary);
+		this.setJobTitle(jobTitle);
 	}
 }
